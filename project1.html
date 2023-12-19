@@ -1,0 +1,139 @@
+<!DOCTYPE html >
+<html>
+<head> 
+    <title> project 1</title>
+    <style>
+    table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+    table, th, td {
+            border: 1px  solid black;
+            border-color: 10px ;
+            border-style:double;
+        }
+    h1
+        { 
+          text-align:center;
+          color: red;
+          font-size: 50px;
+          font-family:Arial;
+       }
+    body{
+       background: rgb(63,94,251);
+       background: lightyellow;
+       color: black;
+       background-attachment: fixed;
+       margin:0;
+       font-family:'Poppins',sans-serif;
+       font-family: Arial;
+       font-size: 15px;
+       font-weight: bold;
+   }
+   button {
+               top:100;
+               left:100;
+               border:black;
+               color: black;
+               padding: 5px 5px;
+               text-align:center;
+               font-weight:bold;
+               display: block;
+               font-size: 20px;
+               margin: auto;
+               transition-duration: 0.4s;
+               cursor: pointer;
+           }
+
+    button{
+            background-color:white;   
+            color: black; 
+            border: 2px solid black;
+            font-size:  15px;
+            margin:10px;
+
+           }
+   button:hover {
+                  background-color: green;
+                  color: red;
+               }
+   #studentData {
+                 padding: 5px;
+                 margin: 5px;
+                }
+</style>
+</head>
+<body>
+    <center>
+        <h1> STUDENT DETAILS</h1>
+    </center>
+    <br>
+<form id = "studentData">
+    <label for = "Name"> Name:</label> 
+    <input id = "name" type = "text" required>
+    <label for = "Age"> Age:</label>
+    <input id = "age" type = "text" required>
+    <label for = "Course"> Course:</label>
+    <input id = "course" type = "text" required>
+    <label for = "Email"> Email:</label>
+    <input id = "email" type = "text" required>
+    <br>
+    <br>
+    <center>
+    <button onclick = "update()"> save</button>
+    </center>
+    <br>
+    <br>
+</form>
+<table id = "studentTable">
+    <tr>
+        <th>No</th>
+        <th> Name </th>
+        <th> Age  </th>
+        <th> Course  </th>
+        <th> Email  </th>
+    </tr>
+    <tbody id = "tableBody">
+
+    </tbody>
+</table>
+<script>
+    var counter = 1;
+    function update()
+    {
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var course = document.getElementById("course").value;
+    var email  = document.getElementById("email").value;
+
+    var tableBody = document.getElementById("tableBody");
+    var newRow = tableBody.insertRow(tableBody.rows.length);
+     
+    var row0 = newRow.insertCell(0)
+    var row1 = newRow.insertCell(1)
+    var row2 = newRow.insertCell(2)
+    var row3 = newRow.insertCell(3)
+    var row4 = newRow.insertCell(4)
+
+    row0.textContent = counter++;
+    row1.textContent = name;
+    row2.textContent = age;
+    row3.textContent = course;
+    row4.textContent = email;
+
+    document.getElementById("name").value = '';
+    document.getElementById("age").value = '';
+    document.getElementById("course").value = '';
+    document.getElementById("email").value = '';
+ 
+    } 
+</script>
+</body>
+</html>
+
+
+
+
+
+
